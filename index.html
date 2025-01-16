@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Etch-a-Sketch</title>
+</head>
+
+<body>
+
+    <h1>Etch-a-Sketch</h1>
+    <div id="btn">
+        <br>
+        <button>Set Grid</button>
+    </div>
+    <div id="container">
+        <script>
+
+            
+            let rnum = 16;
+            let cnum = 16;
+
+
+            const container = document.getElementById("container")
+            let rows = document.getElementsByClassName("row")
+            let columns = document.getElementsByClassName("column")
+
+
+            function defaultGrid() {
+                makeRows(rnum);
+                makeGrids(cnum);
+            }
+
+            function makeRows(rnum) {
+                for (r = 0; r < rnum; r++) {
+                    let row = document.createElement("div");
+                    row.className = "row"
+                    container.appendChild(row);
+                }
+            }
+            function makeGrids() {
+                const rows = document.getElementsByClassName("row");
+                for (let i = 0; i < rows.length; i++) {
+                    for (let g = 0; g < cnum; g++) {
+                        let column = document.createElement("div");
+                        column.className = "column";
+
+                        column.addEventListener("mouseover", function() {
+                            column.style.backgroundColor = "black"
+                        })
+                        rows[i].appendChild(column);
+                    }
+                }
+            }
+
+            document.querySelector("button").addEventListener('click', promptMe);
+
+function promptMe() {
+    let promptUser = prompt("Type a number 100 or less for grid");
+
+
+    if (promptUser === null || isNaN(promptUser) || promptUser < 1 || promptUser > 100) {
+        alert("Please enter a valid number between 1 and 100.");
+        return;
+    }
+
+    rnum = promptUser;
+    cnum = promptUser;
+
+    container.innerHTML = "";
+
+
+
+    // Call the defaultGrid function with the new size
+    defaultGrid();
+}
+defaultGrid(16)
+
+
+
+
+        </script>
+    </div>
+</body>
+
+</html>
