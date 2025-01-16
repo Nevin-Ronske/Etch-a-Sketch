@@ -1,8 +1,9 @@
+/* Title */
 h1 {
     text-align: center;
     text-decoration: underline;
 }
-
+/* button positioning */
 #btn {
     display: flex;
     flex-direction: row;
@@ -10,14 +11,14 @@ h1 {
     padding: 1rem;
 
 }
-
+/* Button Styling */
 button {
     border-radius: 5px;
     margin-bottom: 1rem;
     padding: .5rem;
 
 }
-
+/* That etch-a-sketch red */
 body {
     background-color: red;
 }
