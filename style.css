@@ -3,14 +3,16 @@ h1 {
     text-align: center;
     text-decoration: underline;
 }
+
 /* button positioning */
 #btn {
     display: flex;
     flex-direction: row;
     justify-content: center;
- 
+
 
 }
+
 /* Button Styling */
 button {
     border-radius: 5px;
@@ -18,6 +20,7 @@ button {
     padding: .5rem;
 
 }
+
 /* That etch-a-sketch red */
 body {
     background-color: red;
